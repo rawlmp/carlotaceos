@@ -32,12 +32,14 @@
         <v-btn flat v-for="(link, i) in links" :key="i" :to="link.route">
           <!--icono aleta caudal-->
 
-          <!-- <v-avatar size="24">
-            <v-img v-bind:src="link.icon"></v-img>
-          </v-avatar>-->
-
           <!--Iconos-->
-          <v-icon>{{link.icon}}</v-icon>
+          <v-icon v-if="i != 1">{{link.icon}}</v-icon>
+          <v-flex class="aleta" xs1 v-else>
+            <v-avatar size="24">
+              <!-- Icono aleta caudal -->
+              <v-img mr-3 v-bind:src="link.icon"></v-img>
+            </v-avatar>
+          </v-flex>
           <v-flex>{{link.text}}</v-flex>
         </v-btn>
       </v-toolbar-items>
@@ -102,5 +104,9 @@ export default {
 
 .letterFont {
   font-family: "Oswald", sans-serif;
+}
+
+.aleta {
+  padding-right: 25px;
 }
 </style>
