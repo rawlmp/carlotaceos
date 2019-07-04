@@ -1,8 +1,9 @@
 <template>
-  <h1>login</h1>
+  <v-btn></v-btn>
 </template>
 
 <script>
+export default {};
 </script>
 
 <style>
